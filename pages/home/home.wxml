@@ -1,0 +1,9 @@
+<view data-weui-theme="dark">
+  <view>亲爱的<text class="name">{{name}}</text>你好！</view>
+  <view>当前时间是：{{now}}</view>
+  <button
+        bindtap="handlerButton"
+        class="weui-btn weui-btn_primary">
+    点击
+  </button>
+</view>
