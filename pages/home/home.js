@@ -2,31 +2,29 @@ const app = getApp();
 
 Page({
     data: {
-        name: '李智粉',
-        now: app.globalData.now
+        username: '小仙女',
+        signs: app.globalData.signs
     },
-    handlerButton(event) {
+    handleClick(event) {
+        const signName = event.currentTarget?.dataset?.name;
+        wx.navigateTo({
+            url: '../detail/detail?signName=' +  signName
+        })
+    },
+    onLoad() {
         const that = this;
-        wx.showModal({
-            title:'操作确认',
-            content: '你确认要修改姓名吗？',
-            success(res) {
-                if(res.confirm) {
-                    if(that.name === '乔治'){
-                        that.name = '李智粉'
-                    } else {
-                        that.name = '乔治'
-                    }
-                    that.setData({
-                        name: that.name
-                    },function (){
-                        wx.showToast({
-                            title:'操作完成',
-                            duration: 700
-                        })
+        wx.getSetting({
+            success (res) {
+                if(res.authSetting["scope.userInfo"]){
+                    wx.getUserInfo({
+                        success: function(res) {
+                            let userInfo = res.userInfo;
+                            let nickName = userInfo.nickName;
+                            that.setData({
+                                username: nickName
+                            });
+                        }
                     })
-                } else if (res.cancel) {
-                    console.log('操作取消')
                 }
             }
         })

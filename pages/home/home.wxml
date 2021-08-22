@@ -1,9 +1,11 @@
-<view data-weui-theme="dark">
-  <view>亲爱的<text class="name">{{name}}</text>你好！</view>
-  <view>当前时间是：{{now}}</view>
-  <button
-        bindtap="handlerButton"
-        class="weui-btn weui-btn_primary">
-    点击
-  </button>
+<view>
+    <view class="user-info">亲爱的 <open-data class="user-name" type="userNickName"></open-data> ！欢迎来到李智粉的星座窝！</view>
+    <view class="signs" >
+        <view class="sign-item" wx:for="{{signs}}" wx:key="name">
+            <view bindtap="handleClick" data-name="{{item.name}}">
+                <image class="sign-image" src="{{item.icon}}"/>
+                <view>{{item.name}}</view>
+            </view>
+       </view>
+   </view>
 </view>

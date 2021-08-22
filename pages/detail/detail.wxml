@@ -1,0 +1,35 @@
+<view class="sign-basic">
+    <image src="{{currentSign.icon}}"/>
+    <view>{{detail.name}}</view>
+    <view>{{detail.range}}</view>
+</view>
+<view class="sign-label">
+    <view class="sign-label-item" wx:for="{{basicInfo}}" wx:key="keyName">
+        <view class="sign-label-name">{{item.keyName}}</view>
+        <view class="sign-label-text">{{item.value}}</view>
+    </view>
+</view>
+<view class="sign-luck">
+    <text>今日运势：</text>
+    {{signLuck.summary}}
+</view>
+<view class="sign-desc">
+    <text>优点：</text>
+    {{detail.yd}}
+</view>
+<view class="sign-desc">
+    <text>缺点：</text>
+    {{detail.qd}}
+</view>
+<view class="sign-desc">
+    <text>基本特质：</text>
+    {{detail.jbtz}}
+</view>
+<view class="sign-desc">
+    <text>具体特质：</text>
+    {{detail.jttz}}
+</view>
+<view class="sign-desc">
+    <text>总体评价：</text>
+    {{detail.zj}}
+</view>

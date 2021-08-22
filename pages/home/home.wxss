@@ -1,10 +1,31 @@
 page{
     height: 100%;
     width: 750rpx;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 10px;
 }
-.name {
-    color: red
+
+.user-info{
+    padding: 10px;
+}
+
+.user-info .user-name {
+    color: green
+}
+
+.signs{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.signs .sign-item{
+    width: 31.3%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.signs .sign-item .sign-image {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+    background: radial-gradient(rgba(240, 240, 255, 0) 40%,rgba(151, 187, 255, 0.75)) 100%;
 }
